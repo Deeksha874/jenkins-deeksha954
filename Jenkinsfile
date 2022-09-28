@@ -14,14 +14,19 @@ pipeline {
             steps{
                 sh 'mvn compile'
             }
+          stage('dockerize')
+        {
+            steps{
+                sh 'docker build -t user-service:latest .'
+            }
         }
-         stage('quality')
+       /*  stage('quality')
         {
             steps{
                
                 sh 'mvn sonar:sonar'
             }
-        }
+        }*/
         
         
         stage('test')

@@ -14,12 +14,7 @@ pipeline {
             steps{
                 sh 'mvn compile'
             }
-          stage('dockerize')
-        {
-            steps{
-                sh 'docker build -t user-service:latest .'
-            }
-        }
+          
        /*  stage('quality')
         {
             steps{
@@ -41,6 +36,12 @@ pipeline {
         {
             steps{
                 sh 'mvn package -DskipTests=true'
+            }
+        }
+        stage('dockerize')
+        {
+            steps{
+                sh 'docker build -t user-service:latest .'
             }
         }
    }

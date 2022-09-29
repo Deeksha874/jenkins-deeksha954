@@ -55,7 +55,7 @@ pipeline {
        }
        post {
           always{
-              sh'docker stop tmp -user-service-container'
+              sh'docker stop tmp-user-service-container'
 }
 }
 }

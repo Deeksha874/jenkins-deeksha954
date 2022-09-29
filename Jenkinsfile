@@ -60,7 +60,8 @@ pipeline {
        }
        post {
           always{
-              sh'docker stop ${DOCKER_TMP_CONTAINER_NAME}'
+              sh 'docker stop ${DOCKER_TMP_CONTAINER_NAME}'
+              sh 'docker rmi ${DOCKER_IMG_NAME}:latest ${DOCKER_IMG_NAME}:${env.BULID_ID}'
 }
 }
 }

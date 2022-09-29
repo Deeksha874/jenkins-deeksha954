@@ -47,7 +47,7 @@ pipeline {
         }
         stage('integration tests'){
         steps {
-           sh 'docker run -dp 7070:8080 --rm --name tmp-user-service-container user-service:latest .'
+           sh 'docker run -dp 7070:8080 --rm --name tmp-user-service-container user-service:latest'
            sleep 10
            sh 'curl -i http://localhost:7070/api/users'
            }

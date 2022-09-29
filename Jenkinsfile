@@ -2,8 +2,8 @@ pipeline {
     agent any
     
     environment{
-        DOCKER_IMG_NAME= 'user-service'
-        DOCKER_TMP_CONTAINER_NAME='tmp-user-service-container'
+        DOCKER_IMG_NAME= "user-service"
+        DOCKER_TMP_CONTAINER_NAME="tmp-user-service-container"
         }
     
     stages{
@@ -47,7 +47,7 @@ pipeline {
         stage('dockerize')
         {
             steps{
-                sh 'docker build -t ${DOCKER_IMG_NAME}:latest -t ${DOCKER_IMG_NAME}:${env.BUILD_ID} .'
+                sh "docker build -t ${DOCKER_IMG_NAME}:latest -t ${DOCKER_IMG_NAME}:${env.BUILD_ID} ."
             }
         }
         stage('integration tests'){

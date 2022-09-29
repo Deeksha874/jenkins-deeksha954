@@ -63,7 +63,7 @@ pipeline {
          {
              steps{
                   withDockerRegistry([credentialsId: 'docker_creds',url: '']){
-                  sh "docker push ${DOCKER_REPO}/${DOCKER_IMG_NAME}:latest"
+                  sh "docker push ${DOCKER_REPO}/${DOCKER_IMG_NAME}:${env.BUILD_ID}"
                   sh "docker push ${DOCKER_REPO}/${DOCKER_IMG_NAME}:latest"
                 }
              }
